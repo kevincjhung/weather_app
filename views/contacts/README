@@ -1,0 +1,4 @@
+
+I suggest you put all your EJS files for your contacts in this views/contacts directory, although you don't *have to*.
+
+This file is mostly just here to prevent git from deleting this directory.
