@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jicnic - Jlan your next picnic!</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <script src="axios.js"></script>
+  <script src="luxon.js"></script>
+  <script src="/api/v1/secrets"></script>
+  <script defer src="frontend.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="headerleft">
+      <a href="/"  class="logo">
+        <span class="logo">Jicnic</span>
+      </a>
+    </div>
+    <div class="headermiddle">
+    </div>
+
+    <div class="headerright">
+      <div class="nodisplay forloggedin">
+        <span>Logged in!</span>
+        <button class="logout">Log Out</button>
+      </div>
+      <form class="nodisplay forloggedout">
+        <label for="headerusername">u:</label>
+        <input id="headerusername" name="username">
+        <label for="headerpassword">p:</label>
+        <input id="headerpassword" name="password">
+        <button class="refresh">Refresh</button>
+        <button class="signup">Sign Up</button>
+        <button class="login">Log In</button>
+      </form>
+    </div>
+  </header>
+  <main>
+    <section class="weekview">
+
+    </section>
+  </main>
+</body>
+
+</html>

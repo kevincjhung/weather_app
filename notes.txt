@@ -1,0 +1,32 @@
+
+***** Front End 
+- When the user clicks a button, send an appropriate AJAX request 
+to the backend
+
+- Process the AJAX response; if the signup/login/logout was successful, 
+update the header
+
+
+***** Back End
+- if request is successful, return status 200, with json with session data
+- if error, return error with error info
+- set backend 
+
+
+***** Problems
+- Will show login/signin page when it says that someone is logged in. 
+
+------------------------------
+Questions: 
+
+
+
+------------------------------
+Notes for future
+- Separating api requests and app requests with router
+- Be careful when you set status codes randomly for testing. Some header statuses such 
+    as 'no content' will literally hide the content you send back
+
+
+
+

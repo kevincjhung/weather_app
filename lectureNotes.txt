@@ -1,0 +1,97 @@
+Ops
+    look at https://12factor.net/
+
+
+config
+    - your app might have stuff that changes depending on the context you run it on
+    - resource handles to the database, memcached and other backing services
+    - credentials to external services such as Amazon S3
+    - per-deploy values such as hostname for the deploy
+
+
+production
+    - when you code on a web app, you code on your own computer
+    - it is not real work until people connect on the internet or download your app
+
+    - the environment that the users use is called 'production'
+    - the real thing we came to build
+
+
+development
+    - the other end, what the developers build on their machines
+
+
+staging
+    - an environment that is similar to production, for testing
+    - kind of like warmup
+
+
+environment variables
+    - your operating system run on processes
+    - processes have an inheritance tree
+    - part of the inheritance is an assumption about how the world works
+    - part of the way it communicates is by the environment
+
+    - you want some kind of system where your code has some plan where it looks 
+    for environment variables within a file.
+
+    in node: process.env
+
+    in js there is a library that uses it. 
+        dotenv    
+
+    www.npmjs.com/package/dotenv
+
+    this is important for novice people to know because you use 
+    public repos all the time. 
+
+    you make a .env file, your secrets go in it
+    then you put it in the .gitignore
+
+
+keep secrets from users
+    our imaginary user will get to see the API key if they were to examine is
+
+    there are complex ways to hide it
+
+
+dev-prod-parity
+    some people argue that you should not make dev and prod too different
+        sometimes your computer and app will be able to run on your machine
+
+
+log
+    when you are in dev mode, you see a bug, and you fix things from error messages in 
+    the console. 
+
+    but, when you deploy to prod, the cycle can be alot longer
+
+    stuff you think may be sus or interesting, emit log messages
+    the log messages can be saved somewhere, that can be looked at later
+
+   you often cannot look at logs while the site is live
+
+
+database    
+    if you write a script, and you want it to end after running it once, you need to disconnect the database
+    
+    do not make db connective during request handlers
+        it makes it like 3 times slower
+        connect, maintain the handle, then when you are done, disconnect the handle
+
+    what you want to do is have 
+        let db = require("./libs/myDb.js")
+
+        app.get("SELECT * FROM table")
+
+pool
+    a bunch of borrowable connections
+    In computer science, a pool is a collection of resources that are kept[clarification needed] 
+    ready to use, rather than acquired on use and released[clarification needed] afterwards. In this 
+    context, resources can refer to system resources such as file handles, which are 
+    external to a process, or internal resources such as objects.
+    
+
+
+
+    
